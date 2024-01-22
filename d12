@@ -1,0 +1,37 @@
+def reverse_string_recursive(input_str):
+    if len(input_str) == 0:
+        return input_str
+    else:
+        return input_str[-1] + reverse_string_recursive(input_str[:-1])
+    
+#     Here, input_str[-1] represents the last character of the original input string, and reverse_string_recursive(input_str[:-1]) represents the reversed string obtained by excluding the last character from the original input string. By concatenating these two parts, we are effectively building the reversed string.
+
+# Let's go through a simple example to illustrate this process. Suppose we want to reverse the string "abc":
+
+# The first recursive call is reverse_string_recursive("abc"), and it returns "c" + reverse_string_recursive("ab").
+# The second recursive call is reverse_string_recursive("ab"), and it returns "b" + reverse_string_recursive("a").
+# The third recursive call is reverse_string_recursive("a"), and it returns "a" + reverse_string_recursive("").
+# Now, as the recursion unwinds:
+
+# reverse_string_recursive("") returns "".
+# reverse_string_recursive("a") returns "a" + "", which is "a".
+# reverse_string_recursive("ab") returns "b" + "a", which is "ba".
+# reverse_string_recursive("abc") returns "c" + "ba", which is "cba".
+input_string = input("enter a string: ")
+
+reversed_recursive = reverse_string_recursive(input_string)
+print("Reversed (Recursive): ", reversed_recursive)
+
+
+# def reverse_string_iterative(input_str):
+#     return input_str[::-1] #{start: stop : step}
+# # first colon separates the start and stop indices, second colon
+# #used to specify the step value, which determines the stride or interval between elements in slice. 
+# # if not specified it sets to 1
+# # in context of reversing a sequence, the second colon with step of -1 is crucial, tells
+# # python to traverse the sequence in reverse order
+
+# input_string = input("enter a string: ")
+
+# reversed_iterative = reverse_string_iterative(input_string)
+# print("Reversed(iterative) :", reversed_iterative)
