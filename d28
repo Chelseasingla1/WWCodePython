@@ -1,0 +1,12 @@
+def remove_nth_element(lst, n):
+    if n<0 or n>= len(lst):
+        print("Invalid Index")
+        return lst
+    
+    del lst[n]
+    return lst
+
+my_list = [1,2,3,4,5]
+n=2
+new_list = remove_nth_element(my_list, n)
+print("List after removing the", n, "element:", new_list)
