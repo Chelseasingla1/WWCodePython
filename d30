@@ -1,0 +1,14 @@
+def second_smallest(lst):
+    if len(lst) < 2:
+        return None
+    
+    sorted_lst = sorted(lst)
+    
+    return sorted_lst[1]
+
+numbers = [5,2,8,1,9,3]
+result = second_smallest(numbers)
+if result is not None:
+    print("Second smallest element:" , result)
+else:
+    print("List has less than two elements")
