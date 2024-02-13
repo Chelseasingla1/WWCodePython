@@ -1,0 +1,28 @@
+# import re
+
+# def is_valid_email(email):
+#     regex = r'^[\w\.-]+@[a-zA-Z0-9\.-]+\.[a-zA-Z]{2,}$'
+    
+#     pattern = re.compile(regex)
+    
+#     if re.match(pattern, email):
+#         return True
+#     else:
+#         return False
+    
+# email = input("Enter an email address:")
+# if is_valid_email(email):
+#     print("Valid email address")
+# else:
+#     print("Invalid email address")
+
+email_domains = ['@gmail.com', '@yahoo.com', '@aol.com']
+email = input('what is your email')
+def email_check(email = email):
+    domain_start_index = email.find('@')
+    email_domain = email[domain_start_index:]
+    if email_domain in email_domains:
+        print('valid email')
+    else:
+        print('not a valid email')
+email_check()
